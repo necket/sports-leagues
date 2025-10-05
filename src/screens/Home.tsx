@@ -4,8 +4,8 @@ import { LeaguesList } from "../components/LeaguesList"
 
 export const Home = () => {
   return (
-    <div>
-      <h1>Sport Leagues</h1>
+    <div className="min-h-screen bg-neutral-950 text-neutral-100 px-4 py-8">
+      <h1 className="text-3xl font-semibold tracking-tight mb-6">Sport Leagues</h1>
       <LeaguesFilters />
       <LeaguesList />
       <BadgeOverview />

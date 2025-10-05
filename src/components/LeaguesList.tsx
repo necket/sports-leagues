@@ -9,7 +9,7 @@ export const LeaguesList = () => {
   if (filteredLeagues.length === 0) return <div>No leagues found</div>;
   
   return (
-    <div>
+    <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4">
       {filteredLeagues.map((league) => (
         <LeagueItem key={league.idLeague} league={league} />
       ))}

@@ -23,8 +23,14 @@ export const LeaguesSearchInput = () => {
   }
   
   return (
-    <div>
-      <input type="text" placeholder="Search" value={value} onChange={handleInputChange} />
+    <div className="flex-1">
+      <input
+        type="text"
+        placeholder="Search leagues..."
+        value={value}
+        onChange={handleInputChange}
+        className="w-full h-10 rounded-md bg-neutral-900 border border-neutral-800 px-3 text-sm text-neutral-100 placeholder:text-neutral-500 outline-none focus-visible:ring-2 focus-visible:ring-neutral-700"
+      />
     </div>
   )
 }

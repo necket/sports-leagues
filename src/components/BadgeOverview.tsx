@@ -13,23 +13,29 @@ export const BadgeOverview = () => {
   }
 
   const renderContent = () => {
-    if (isLoading) return <div>Loading...</div>;
-    if (isError) return <div>Error loading badge</div>;
+    if (isLoading) return <div className="text-neutral-100">Loading...</div>;
+    if (isError) return <div className="text-neutral-100">Error loading badge</div>;
 
     const badgeUrl = getBadgeUrl(data);
 
-    if (!badgeUrl) return <div>No badge found</div>;
+    if (!badgeUrl) return <div className="text-neutral-100">No badge found</div>;
 
     return (
-      <div>
-        <img src={badgeUrl} />
+      <div className="w-full flex items-center justify-center">
+        <img
+          src={badgeUrl}
+          alt="League badge"
+          className="max-h-[80vh] max-w-[90vw] object-contain drop-shadow-2xl"
+        />
       </div>
     );
   }
 
   return (
-    // overlay
-    <div onClick={handleBadgeClick}>
+    <div
+      onClick={handleBadgeClick}
+      className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
+    >
       {renderContent()}
     </div>
   );
